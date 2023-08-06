@@ -1,8 +1,7 @@
 # Java_FullStack_SpringBoot3_SpringFramework6
 ## Table of Contents
 1.[Overview](#Overview)
-
-2.[Java Gaming Application](#Java Gaming Application)
+2.[Java Gaming Application](#Java-Gaming-Application)
 
 ## Overview
 ### Description
