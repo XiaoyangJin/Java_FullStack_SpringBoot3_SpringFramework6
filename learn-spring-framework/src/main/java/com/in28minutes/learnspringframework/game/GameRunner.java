@@ -2,9 +2,9 @@ package com.in28minutes.learnspringframework.game;
 
 public class GameRunner {
 	//create an instance of MarioGame
-	MarioGame game;
+	private SuperContraGame game;
 	
-	public GameRunner(MarioGame game) {
+	public GameRunner(SuperContraGame game) {
 		this.game = game;
 	}
 
