@@ -33,7 +33,7 @@ public class HelloWorldConfiguration {
 		return new Person("Jay", 56);
 	}
 	
-	@Bean
+	@Bean(name = "address2") //custome bean name
 	public Address address() {
 		return new Address("Baker street", "London");
 	}
