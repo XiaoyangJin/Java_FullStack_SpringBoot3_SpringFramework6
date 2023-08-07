@@ -2,6 +2,7 @@ package com.in28minutes.learnspringframework;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 record Person (String name, int age, Address address) {
 	//record means we don't need to build getters, setters, constructor..., it already automatically created for us
@@ -44,7 +45,15 @@ public class HelloWorldConfiguration {
 		return new Person(name, age, address3);
 	}
 	
+	@Bean
+	@Primary
+	public Person person4Parameters(String name, int age, Address address) {
+		//name, age, address2
+		return new Person(name, age, address);
+	}
+	
 	@Bean(name = "address2") //custome bean name
+	@Primary
 	public Address address() {
 		return new Address("Baker street", "London");
 	}
