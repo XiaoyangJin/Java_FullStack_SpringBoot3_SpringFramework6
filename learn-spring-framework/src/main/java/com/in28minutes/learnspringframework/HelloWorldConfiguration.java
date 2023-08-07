@@ -38,9 +38,20 @@ public class HelloWorldConfiguration {
 		return new Person(name(), age(), address());
 	}
 	
+	@Bean
+	public Person person3Parameters(String name, int age, Address address3) {
+		//name, age, address2
+		return new Person(name, age, address3);
+	}
+	
 	@Bean(name = "address2") //custome bean name
 	public Address address() {
 		return new Address("Baker street", "London");
+	}
+	
+	@Bean(name = "address3") //custome bean name
+	public Address address3() {
+		return new Address("School street", "Allston");
 	}
 	
 }
