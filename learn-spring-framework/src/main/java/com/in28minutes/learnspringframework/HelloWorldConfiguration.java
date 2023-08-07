@@ -33,6 +33,11 @@ public class HelloWorldConfiguration {
 		return new Person("Jay", 56);
 	}
 	
+	@Bean
+	public Person person2MethodCall() {
+		return new Person(name(), age());
+	}
+	
 	@Bean(name = "address2") //custome bean name
 	public Address address() {
 		return new Address("Baker street", "London");
