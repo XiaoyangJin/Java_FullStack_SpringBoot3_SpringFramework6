@@ -6,8 +6,28 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-//dependency injection
+import org.springframework.stereotype.Component;
 
+//YourBusinessClass
+//Dependency1
+//Dependency2
+@Component
+class YourBusinessClass{
+	
+}
+
+@Component
+class Dependency1{
+	
+}
+
+@Component
+class Dependency2{
+	
+}
+
+
+//dependency injection
 @Configuration
 @ComponentScan("com.in28minutes.learnspringframework.examples.a1")
 public class DepInjectionLauncherApplication {
