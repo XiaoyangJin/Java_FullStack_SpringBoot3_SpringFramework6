@@ -11,12 +11,6 @@ import com.in28minutes.learnspringframework.game.GameRunner;
 @Configuration
 @ComponentScan
 public class App03GamingSpringBeans {
-	
-	@Bean
-	public GameRunner gameRunner(GameConsole game) {
-		var gameRunner = new GameRunner(game);
-		return gameRunner;
-	}
 
 	public static void main(String[] args) {
 		
