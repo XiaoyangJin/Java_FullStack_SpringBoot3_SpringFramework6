@@ -1,4 +1,4 @@
-package com.in28minutes.learnspringframework.examples.a1;
+package com.in28minutes.learnspringframework.examples.a0;
 
 import java.util.Arrays;
 
@@ -10,12 +10,12 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan("com.in28minutes.learnspringframework.examples.a1")
-public class DepInjectionLauncherApplication {
+public class SimpleSpringContextLauncherApplication {
 
 	public static void main(String[] args) {
 		
 		try(var context = new AnnotationConfigApplicationContext
-				(DepInjectionLauncherApplication.class)){
+				(SimpleSpringContextLauncherApplication.class)){
 			
 			Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
 			
