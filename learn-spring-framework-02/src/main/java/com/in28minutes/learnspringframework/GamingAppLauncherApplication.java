@@ -10,12 +10,12 @@ import com.in28minutes.learnspringframework.game.GameRunner;
 
 @Configuration
 @ComponentScan
-public class App03GamingSpringBeans {
+public class GamingAppLauncherApplication {
 
 	public static void main(String[] args) {
 		
 		try(var context = new AnnotationConfigApplicationContext
-				(App03GamingSpringBeans.class)){
+				(GamingAppLauncherApplication.class)){
 			context.getBean(GameConsole.class).up();
 			context.getBean(GameRunner.class).run();
 		}
