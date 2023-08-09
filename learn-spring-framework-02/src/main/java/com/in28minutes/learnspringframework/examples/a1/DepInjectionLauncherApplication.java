@@ -22,8 +22,8 @@ class YourBusinessClass{
 	Dependency2 dependency2;
 	
 	
-	//constructor
-	@Autowired
+	//constructor injection
+	//@Autowired
 	public YourBusinessClass(Dependency1 dependency1, Dependency2 dependency2) {
 		super();
 		System.out.println("Constructor Injection - YourBusinessClass");
