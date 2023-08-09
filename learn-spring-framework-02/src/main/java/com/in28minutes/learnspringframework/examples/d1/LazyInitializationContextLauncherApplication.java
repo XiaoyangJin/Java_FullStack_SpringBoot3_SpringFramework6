@@ -28,6 +28,10 @@ class ClassB {
 		this.classA = classA;
 	}
 	
+	public void doSomething() {
+		System.out.println("do something");
+	}
+	
 }
 
 
@@ -39,6 +43,10 @@ public class LazyInitializationContextLauncherApplication {
 		
 		try(var context = new AnnotationConfigApplicationContext
 				(LazyInitializationContextLauncherApplication.class)){
+			
+			System.out.println("Initialization of context is completed");
+			
+			context.getBean(ClassB.class).doSomething();
 			
 		}
 
