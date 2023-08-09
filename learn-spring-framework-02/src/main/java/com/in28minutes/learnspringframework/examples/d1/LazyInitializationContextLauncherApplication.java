@@ -6,6 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 //dependency injection
 
@@ -15,6 +16,7 @@ class ClassA {
 }
 
 @Component
+@Lazy
 class ClassB {
 	
 	private ClassA classA;
@@ -37,8 +39,6 @@ public class LazyInitializationContextLauncherApplication {
 		
 		try(var context = new AnnotationConfigApplicationContext
 				(LazyInitializationContextLauncherApplication.class)){
-			
-			Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
 			
 		}
 
