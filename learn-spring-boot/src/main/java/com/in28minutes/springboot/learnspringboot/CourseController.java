@@ -24,7 +24,11 @@ public class CourseController {
 		//JSON Conversion
 		return Arrays.asList(
 				new Course(1, "Learn AWS", "in28minutes"),
-				new Course(2, "Learn DevOps", "in28minutes")
+				new Course(2, "Learn DevOps", "in28minutes"),
+				new Course(3, "Learn Anzure", "in28minutes"),
+				new Course(4, "Learn Python", "in28minutes"),
+				new Course(5, "Learn Angular", "in28minutes"),
+				new Course(6, "Learn Kotlin", "in28minutes")
 				);
 	}
 	
