@@ -21,6 +21,7 @@ public class CourseController {
 	
 	@RequestMapping("/courses")
 	public List<Course> retrieveAllCourses() {
+		//JSON Conversion
 		return Arrays.asList(
 				new Course(1, "Learn AWS", "in28minutes"),
 				new Course(2, "Learn DevOps", "in28minutes")
