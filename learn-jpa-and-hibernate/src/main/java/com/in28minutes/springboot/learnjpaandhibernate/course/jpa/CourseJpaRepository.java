@@ -1,6 +1,5 @@
 package com.in28minutes.springboot.learnjpaandhibernate.course.jpa;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.in28minutes.springboot.learnjpaandhibernate.course.Course;
