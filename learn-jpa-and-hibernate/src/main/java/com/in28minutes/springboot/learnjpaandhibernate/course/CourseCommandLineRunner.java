@@ -40,7 +40,7 @@ public class CourseCommandLineRunner implements CommandLineRunner {
 		System.out.println(repository.findByAuthor(""));
 		System.out.println(repository.findByAuthor("in28minutes"));
 		
-		System.out.println(repository.findByName(""));
+		System.out.println(repository.findByName("Learn SQL SpringJpa"));
 		System.out.println(repository.findByName("Learn AWS SpringJpa"));
 	}
 
