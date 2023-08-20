@@ -7,8 +7,10 @@ import com.in28minutes.springboot.learnjpaandhibernate.course.Course;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 
 @Repository
+@Transactional
 public class CourseJpaRepository {
 
 	@PersistenceContext
