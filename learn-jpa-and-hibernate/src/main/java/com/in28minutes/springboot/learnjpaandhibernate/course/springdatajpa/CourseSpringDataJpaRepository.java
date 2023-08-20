@@ -9,5 +9,7 @@ import com.in28minutes.springboot.learnjpaandhibernate.course.Course;
 public interface CourseSpringDataJpaRepository extends JpaRepository<Course, Long> {
 	
 	//Custom method
-	List<Course> findByAuthor(String suthor);
+	List<Course> findByAuthor(String author);
+	
+	List<Course> findByName(String name);
 }
