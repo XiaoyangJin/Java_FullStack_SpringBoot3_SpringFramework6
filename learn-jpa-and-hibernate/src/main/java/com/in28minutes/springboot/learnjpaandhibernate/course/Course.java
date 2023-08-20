@@ -1,16 +1,25 @@
 package com.in28minutes.springboot.learnjpaandhibernate.course;
 
-public class Course {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity
+public class Course {
+	
+	@Id //primary key
 	private long id;
+	
+	@Column(name = "name")
 	private String name;
+	
+	@Column
 	private String author;
-	
-	
+
 	public Course() {
-		
+
 	}
-	
+
 	public Course(long id, String name, String author) {
 		super();
 		this.id = id;
@@ -18,30 +27,17 @@ public class Course {
 		this.author = author;
 	}
 
-
-
-
 	public long getId() {
 		return id;
 	}
-
-
-
 
 	public String getName() {
 		return name;
 	}
 
-
-
-
 	public String getAuthor() {
 		return author;
 	}
-
-
-	
-
 
 	public void setId(long id) {
 		this.id = id;
@@ -59,7 +55,5 @@ public class Course {
 	public String toString() {
 		return "Course [id=" + id + ", name=" + name + ", author=" + author + "]";
 	}
-	
-	
-	
+
 }
