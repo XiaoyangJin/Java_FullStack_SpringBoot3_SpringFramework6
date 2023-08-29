@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
 	
+	private AuthenticationService authenticationService = new AuthenticationService();
+	
 	//http://localhost:8080/login?name=summer
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String gotoLoginPage() {
@@ -20,8 +22,18 @@ public class LoginController {
 	//login?name = lin, RequestParam
 	public String gotoWelcomePage(@RequestParam String name, 
 			@RequestParam String password, ModelMap model) {
-		model.put("name", name);
-		model.put("password", password);
-		return "welcome";
+		
+		if(authenticationService.authenticate(name, password)) {
+			model.put("name", name);
+			model.put("password", password);
+			
+			//Authentication
+			//eg. valid name = lin, valid password = lin
+			
+			
+			return "welcome";
+		}
+		
+		return "login";
 	}
 }
