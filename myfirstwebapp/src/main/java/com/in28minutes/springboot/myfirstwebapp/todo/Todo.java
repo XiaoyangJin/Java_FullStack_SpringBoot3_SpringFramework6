@@ -2,6 +2,9 @@ package com.in28minutes.springboot.myfirstwebapp.todo;
 
 import java.time.LocalDate;
 
+//Database(MySQL)
+//Static List of Todos => Database(H2, MySQL)
+
 public class Todo {
 	private int id;
 	private String userName;
