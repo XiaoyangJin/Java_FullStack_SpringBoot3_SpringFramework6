@@ -9,8 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
 	
-	private AuthenticationService authenticationService = new AuthenticationService();
+	private AuthenticationService authenticationService;
 	
+	public LoginController(AuthenticationService authenticationService) {
+		super();
+		this.authenticationService = authenticationService;
+	}
+
 	//http://localhost:8080/login?name=summer
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String gotoLoginPage() {
