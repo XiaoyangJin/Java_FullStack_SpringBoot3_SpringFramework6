@@ -30,6 +30,7 @@
 					</c:forEach>
 				</tbody>
 			</table>
+			<a href = "add-todo" class = "btn btn-success">Add Todo</a>
 		</div>
 		<!-- javascript usually add right before the closing tag of the body -->
 		<script src = "webjars/bootstrap/5.3.1/js/bootstrap.min.js"></script>
