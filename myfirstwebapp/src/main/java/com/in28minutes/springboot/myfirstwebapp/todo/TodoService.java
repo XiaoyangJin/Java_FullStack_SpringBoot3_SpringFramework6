@@ -12,6 +12,7 @@ public class TodoService {
 	
 	private static int todosCount = 0;
 	
+	//this static list will refresh everytime the browser is restart
 	static{
 		todos.add(new Todo(++todosCount, "Lin", "Learn REACT", 
 				           LocalDate.now().plusYears(1), false));
