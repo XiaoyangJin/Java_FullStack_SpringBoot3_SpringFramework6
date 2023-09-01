@@ -25,7 +25,6 @@ public class TodoController {
 
 	@RequestMapping("list-todos")
 	public String listAllTodos(ModelMap model) {
-		
 		List<Todo> todos = todoService.findByUsername("Lin");
 		model.addAttribute("todos", todos);
 		return "listTodos";
@@ -34,7 +33,12 @@ public class TodoController {
 	//GET, POST
 	@RequestMapping(value = "add-todo", method = RequestMethod.GET)
 	public String showNewTodoPage() {
-		
 		return "todo";
+	}
+	
+	@RequestMapping(value = "add-todo", method = RequestMethod.POST)
+	public String addNewTodo() {
+		
+		return "redirect:list-todos";
 	}
 }
