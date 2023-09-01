@@ -11,10 +11,10 @@
 	<body>
 		<div class = "container">
 			<h1>Enter Todo Details</h1>
-			<form method = "post">
-				Description: <input type = "text" name = "description" required = "required"/>
+			<form:form method = "post" modelAttribute = "todo">
+				Description: <form:input type = "text" path = "description" required = "required"/>
 				<input type = "submit" class = "btn btn-success"/>
-			</form>
+			</form:form>
 		</div>
 		<!-- javascript usually add right before the closing tag of the body -->
 		<script src = "webjars/bootstrap/5.3.1/js/bootstrap.min.js"></script>
