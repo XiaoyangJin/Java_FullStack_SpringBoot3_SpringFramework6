@@ -10,7 +10,7 @@
 		<div class = "container">
 			<hr>
 			<h1>Your Todos are </h1>
-			<table>
+			<table class = "table">
 				<thead>
 					<tr>
 						<th>id</th>
