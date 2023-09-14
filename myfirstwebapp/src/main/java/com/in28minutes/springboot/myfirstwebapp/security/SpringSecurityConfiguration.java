@@ -1,5 +1,7 @@
 package com.in28minutes.springboot.myfirstwebapp.security;
 
+import java.util.function.Function;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.User;
@@ -15,7 +17,10 @@ public class SpringSecurityConfiguration {
 	
 	@Bean
 	public InMemoryUserDetailsManager createUserDetailsManager() {
-		UserDetails userDetails = User.withDefaultPasswordEncoder()
+		//lambda function
+		Function<String, String> passwordEncoder = input -> passwordEncoder().encode(input);
+		UserDetails userDetails = User.builder()
+									  .passwordEncoder(passwordEncoder)
 				                      .username("lin")
 				                      .password("lin")
 				                      .roles("USER", "ADMIN")
