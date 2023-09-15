@@ -48,6 +48,7 @@ public class SpringSecurityConfiguration {
 	//CSRF disable
 	//Frames
 	
+	@SuppressWarnings("removal")
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests(
