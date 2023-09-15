@@ -10,6 +10,7 @@ import jakarta.validation.constraints.Size;
 //Database(MySQL)
 //Static List of Todos => Database(H2, MySQL)
 
+
 //map a bean to db table
 @Entity
 public class Todo {

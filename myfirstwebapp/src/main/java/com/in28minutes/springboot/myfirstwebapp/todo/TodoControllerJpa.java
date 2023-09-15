@@ -15,15 +15,15 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import jakarta.validation.Valid;
 
-//@Controller
+@Controller
 @SessionAttributes("name")
-public class TodoController {
+public class TodoControllerJpa {
 	// /list-todos
 	
 	private TodoService todoService;
 	
 	
-	public TodoController(TodoService todoService) {
+	public TodoControllerJpa(TodoService todoService) {
 		super();
 		this.todoService = todoService;
 	}
