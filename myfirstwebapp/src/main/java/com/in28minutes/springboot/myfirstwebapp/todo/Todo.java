@@ -1,12 +1,21 @@
 package com.in28minutes.springboot.myfirstwebapp.todo;
 
 import java.time.LocalDate;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
 //Database(MySQL)
 //Static List of Todos => Database(H2, MySQL)
 
+//map a bean to db table
+@Entity(name = "TodoABC")
 public class Todo {
+	
+	@Id
+	@GeneratedValue
 	private int id;
 	private String userName;
 	
