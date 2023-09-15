@@ -20,17 +20,13 @@ import jakarta.validation.Valid;
 public class TodoControllerJpa {
 	// /list-todos
 	
-	private TodoService todoService;
 	
 	private TodoRepository todoRepository;
 	
-	public TodoControllerJpa(TodoService todoService, TodoRepository todoRepository) {
+	public TodoControllerJpa(TodoRepository todoRepository) {
 		super();
-		this.todoService = todoService;
 		this.todoRepository = todoRepository;
 	}
-
-
 
 	@RequestMapping("list-todos")
 	public String listAllTodos(ModelMap model) {
