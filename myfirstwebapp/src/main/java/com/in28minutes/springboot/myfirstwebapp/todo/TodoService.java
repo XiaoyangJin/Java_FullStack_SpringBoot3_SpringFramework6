@@ -17,11 +17,11 @@ public class TodoService {
 	
 	//this static list will refresh everytime the browser is restart
 	static{
-		todos.add(new Todo(++todosCount, "Lin", "Learn REACT", 
+		todos.add(new Todo(++todosCount, "Lin", "Learn REACT 1", 
 				           LocalDate.now().plusYears(1), false));
-		todos.add(new Todo(++todosCount, "Lin", "Learn AWS", 
+		todos.add(new Todo(++todosCount, "Lin", "Learn AWS 1", 
 		           LocalDate.now().plusYears(2), false));
-		todos.add(new Todo(++todosCount, "Lin", "Learn node.js", 
+		todos.add(new Todo(++todosCount, "Lin", "Learn node.js 1", 
 		           LocalDate.now().plusYears(3), false));
 	}
 	
