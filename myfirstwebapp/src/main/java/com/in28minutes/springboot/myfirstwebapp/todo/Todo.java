@@ -2,7 +2,6 @@ package com.in28minutes.springboot.myfirstwebapp.todo;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -18,8 +17,6 @@ public class Todo {
 	@Id
 	@GeneratedValue
 	private int id;
-	
-	@Column(name = "name")
 	private String userName;
 	
 	@Size(min = 10, message = "Enter at least 10 characters")
