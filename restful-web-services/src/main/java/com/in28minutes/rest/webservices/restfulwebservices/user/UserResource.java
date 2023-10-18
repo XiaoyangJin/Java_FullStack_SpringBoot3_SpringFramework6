@@ -2,6 +2,8 @@ package com.in28minutes.rest.webservices.restfulwebservices.user;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.ResponseEntity.BodyBuilder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,8 +34,10 @@ public class UserResource {
 	
 	//POST /users
 	@PostMapping("/users")
-	public void createUser(@RequestBody User user) {
+	public ResponseEntity<Object> createUser(@RequestBody User user) {
 		service.save(user);
+		
+		return ResponseEntity.created(null).build();
 	}
 	
 }
