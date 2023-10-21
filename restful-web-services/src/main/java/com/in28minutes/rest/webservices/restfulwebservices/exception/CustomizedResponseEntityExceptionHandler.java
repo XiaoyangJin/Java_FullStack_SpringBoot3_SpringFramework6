@@ -1,6 +1,7 @@
 package com.in28minutes.rest.webservices.restfulwebservices.exception;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<Object> handelAllExceptions(Exception ex, WebRequest request) throws Exception{
 		//create own exception object
-		ErrorDetails errorDetails = new ErrorDetails(LocalDate.now(), ex.getMessage(), request.getDescription(false));
+		ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
 		return new ResponseEntity(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }
