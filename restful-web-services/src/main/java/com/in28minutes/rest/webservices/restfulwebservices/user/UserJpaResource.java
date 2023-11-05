@@ -66,7 +66,7 @@ public class UserJpaResource {
 	//delete user
 	@DeleteMapping("/jpa/users/{id}")
 	public void deleteUser(@PathVariable int id){
-		service.deleteById(id);
+		repository.deleteById(id);
 	}
 	
 	//POST /users
