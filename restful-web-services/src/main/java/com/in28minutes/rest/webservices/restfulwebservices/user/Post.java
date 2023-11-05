@@ -12,6 +12,8 @@ public class Post {
 	private Integer id;
 	
 	private String description;
+	
+	private User user;
 
 	public Integer getId() {
 		return id;
