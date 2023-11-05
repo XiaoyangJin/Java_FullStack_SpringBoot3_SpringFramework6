@@ -26,13 +26,10 @@ import jakarta.validation.Valid;
 public class UserJpaResource {
 	
 	//autowire
-	private UserDaoService service;
-	
 	private UserRepository repository;
 	
 	//constructor
-	public UserJpaResource(UserDaoService service, UserRepository repository) {
-		this.service = service;
+	public UserJpaResource(UserRepository repository) {
 		this.repository = repository;
 	}
 	
