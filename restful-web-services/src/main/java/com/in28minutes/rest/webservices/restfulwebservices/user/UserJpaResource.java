@@ -72,7 +72,7 @@ public class UserJpaResource {
 	//POST /users
 	@PostMapping("/jpa/users")
 	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
-		User savedUser = service.save(user);
+		User savedUser = repository.save(user);
 		// /users/4 => /users/{id}, user.getID
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
 			           .path("/{id}")
