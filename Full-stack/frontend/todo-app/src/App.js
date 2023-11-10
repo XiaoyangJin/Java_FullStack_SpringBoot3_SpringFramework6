@@ -4,8 +4,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      My Todo Application
       <FirstComponent></FirstComponent>
+      <SecondComponent></SecondComponent>
     </div>
   );
 }
@@ -13,6 +13,12 @@ function App() {
 function FirstComponent() {
   return (
     <div className="FirstComponent">First Component</div>
+  )
+}
+
+function SecondComponent() {
+  return (
+    <div className="SecondComponent">Second Component</div>
   )
 }
 
