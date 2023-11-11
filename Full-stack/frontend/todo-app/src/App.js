@@ -5,7 +5,7 @@ import { Component } from 'react';
 function App() {
   return (
     <div className="App">
-      <FirstComponent></FirstComponent>
+      <FirstComponent />
       <SecondComponent></SecondComponent>
       <ThirdComponent></ThirdComponent>
       <FourthComponent></FourthComponent>
