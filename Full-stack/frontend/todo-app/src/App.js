@@ -40,10 +40,10 @@ class FourthComponent extends Component {
   //method
   render() {
     return (
-      <div>
+      <>
         <div className="FourthComponent">Fourth Component</div>
         <div className="FourthComponent">Fourth Component</div>
-      </div>
+      </>
     )
   }
 }
