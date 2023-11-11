@@ -6,18 +6,16 @@ function App() {
   return (
     <div className="App">
       <FirstComponent />
-      <SecondComponent></SecondComponent>
-      <ThirdComponent></ThirdComponent>
-      <FourthComponent></FourthComponent>
+      <SecondComponent />
+      <ThirdComponent />
+      <FourthComponent />
     </div>
   );
 }
 
 // function components
 function FirstComponent() {
-  return (
-    <div className="FirstComponent">First Component</div>
-  )
+  return <div className="FirstComponent">First Component</div>
 }
 
 function SecondComponent() {
