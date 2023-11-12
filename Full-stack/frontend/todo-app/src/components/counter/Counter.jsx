@@ -8,7 +8,10 @@ export default function Counter() {
         <div className="Counter">
             <span className="count">0</span>
             <div>
-                <button className="counterButton" onClick={incrementCounterFunction}>+1</button>
+                <button className="counterButton"
+                    onClick={incrementCounterFunction}
+                    style={{ fontSize: "30px" }}
+                >+1</button>
             </div>
 
         </div>
