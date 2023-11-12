@@ -7,7 +7,9 @@ const person = {
     },
     profiles: ['twitter', 'LinkedIn', 'ins'],
     printProfile: () => {
-        console.log(person.profiles[0])
+        person.profiles.map(
+            (profile) => console.log(person.profiles)
+        )
     }
 }
 
