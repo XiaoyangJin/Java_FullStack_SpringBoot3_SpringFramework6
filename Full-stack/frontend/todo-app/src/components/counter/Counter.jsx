@@ -1,5 +1,7 @@
 export default function Counter() {
 
+    const buttonStyle = { fontSize: "30px" }
+
     function incrementCounterFunction() {
         console.log('increment clicked')
     }
@@ -10,7 +12,7 @@ export default function Counter() {
             <div>
                 <button className="counterButton"
                     onClick={incrementCounterFunction}
-                    style={{ fontSize: "30px" }}
+                    style={buttonStyle}
                 >+1</button>
             </div>
 
