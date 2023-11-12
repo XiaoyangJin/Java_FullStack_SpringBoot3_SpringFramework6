@@ -4,7 +4,8 @@ const person = {
         line1: 'Baker Street',
         city: 'London',
         contry: 'UK',
-    }
+    },
+    profiles: ['twitter', 'LinkedIn', 'ins']
 }
 
 export default function LearningJavaScript() {
@@ -12,6 +13,8 @@ export default function LearningJavaScript() {
         <div>
             <div>{person.name}</div>
             <div>{person.address.city}</div>
+            <div>{person.profiles[0]}</div>
+
         </div>
     );
 }
