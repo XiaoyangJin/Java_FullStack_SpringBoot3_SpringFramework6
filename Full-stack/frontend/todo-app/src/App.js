@@ -1,5 +1,6 @@
 import './App.css';
 import { Component } from 'react';
+import FirstComponent from './components/learning-examples/FirstComponent'
 
 // All components we wrote shoud be child components of App component
 function App() {
@@ -14,10 +15,6 @@ function App() {
 }
 
 // function components
-function FirstComponent() {
-  return <div className="FirstComponent">First Component</div>
-}
-
 function SecondComponent() {
   return (
     <div className="SecondComponent">Second Component</div>
