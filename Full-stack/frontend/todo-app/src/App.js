@@ -1,6 +1,6 @@
 import './App.css';
-import { Component } from 'react';
 import FirstComponent from './components/learning-examples/FirstComponent'
+import FifthComponent from './components/learning-examples/FirstComponent';
 import SecondComponent from './components/learning-examples/SecondComponent';
 import ThirdComponent from './components/learning-examples/ThirdComponent';
 import FourthComponent from './components/learning-examples/FourthComponent';
@@ -13,6 +13,7 @@ function App() {
       <SecondComponent />
       <ThirdComponent />
       <FourthComponent />
+      <FifthComponent />
     </div>
   );
 }
