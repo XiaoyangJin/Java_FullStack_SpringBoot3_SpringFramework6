@@ -14,11 +14,20 @@ function App() {
   );
 }
 
-function PlayWithProps(properties) {
+// function PlayWithProps(properties) {
 
-  console.log(properties);
-  console.log(properties.property1);
-  console.log(properties.property2);
+//   console.log(properties);
+//   console.log(properties.property1);
+//   console.log(properties.property2);
+
+//   return (
+//     <div>Props</div>
+//   )
+// }
+
+function PlayWithProps({ property1, property2 }) {
+  console.log(property1);
+  console.log(property2);
 
   return (
     <div>Props</div>
