@@ -5,7 +5,8 @@ export default function Counter() {
     const state = useState(0);
 
     function incrementCounterFunction() {
-        console.log(state)
+        console.log(state[0])
+        console.log(state[1])
         console.log('increment clicked')
     }
 
