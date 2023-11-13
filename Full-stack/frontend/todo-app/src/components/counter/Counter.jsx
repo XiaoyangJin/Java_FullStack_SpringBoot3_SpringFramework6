@@ -2,14 +2,11 @@ import { useState } from 'react'
 import './Counter.css'
 export default function Counter() {
 
-    const state = useState(0);
+    const [count, setCount] = useState(0);
 
     function incrementCounterFunction() {
-
-        state[1](state[0] + 1)
-        console.log(state[0])
-        console.log(state[1])
-        console.log('increment clicked')
+        setCount(count + 1)
+        console.log(count)
     }
 
     return (
