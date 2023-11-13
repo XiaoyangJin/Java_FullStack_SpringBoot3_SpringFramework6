@@ -10,32 +10,33 @@ export default function Counter() {
         setCount(count + by)
     }
 
-    function someMethodInParent() {
-        console.log("parent method called")
+    function decrementCounterParentFunction(by) {
+        setCount(count - by)
     }
 
     return (
         <div>
             <span className="totalCount">{count}</span>
-            <CounterButton by={1} someMethodInParent={someMethodInParent} />
-            <CounterButton by={3} someMethodInParent={someMethodInParent} />
-            <CounterButton by={5} someMethodInParent={someMethodInParent} />
+            <CounterButton by={1} incrementMethod={incrementCounterParentFunction} decrementMethod={decrementCounterParentFunction} />
+            <CounterButton by={3} incrementMethod={incrementCounterParentFunction} decrementMethod={decrementCounterParentFunction} />
+            <CounterButton by={5} incrementMethod={incrementCounterParentFunction} decrementMethod={decrementCounterParentFunction} />
         </div>
     )
 }
 
-function CounterButton({ by, someMethodInParent }) {
+function CounterButton({ by, incrementMethod, decrementMethod }) {
 
     // array
     const [count, setCount] = useState(0);
 
     function incrementCounterFunction() {
-        someMethodInParent();
         setCount(count + by)
+        incrementMethod(by)
     }
 
     function decrementCounterFunction() {
         setCount(count - by)
+        decrementMethod(by)
     }
 
     return (
