@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import './Counter.css'
 export default function Counter() {
 
+    const state = useState(0);
+
     function incrementCounterFunction() {
+        console.log(state)
         console.log('increment clicked')
     }
 
