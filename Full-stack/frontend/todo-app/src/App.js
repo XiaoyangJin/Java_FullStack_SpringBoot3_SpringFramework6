@@ -6,8 +6,6 @@ function App() {
   return (
     <div className="App">
       <Counter />
-      <Counter by={3} />
-      <Counter by={5} />
 
     </div>
   );
