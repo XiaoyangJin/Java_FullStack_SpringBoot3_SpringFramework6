@@ -34,3 +34,7 @@ export default function Counter({ by }) {
 Counter.propTypes = {
     by: PropTypes.number
 }
+
+Counter.defaultProps = {
+    by: 1
+}
