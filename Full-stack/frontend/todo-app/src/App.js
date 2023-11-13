@@ -5,10 +5,9 @@ import Counter from './components/counter/Counter';
 function App() {
   return (
     <div className="App">
-      <PlayWithProps property1="value1" property2="value2"></PlayWithProps>
-      <Counter />
-      <Counter />
-      <Counter />
+      <Counter by={1} />
+      <Counter by={3} />
+      <Counter by={5} />
 
     </div>
   );
