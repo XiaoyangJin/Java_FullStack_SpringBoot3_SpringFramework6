@@ -10,7 +10,7 @@ These are all projects I followed to learn Spring Boot 3, Spring Framework 6, Re
 
 ## Projects Introduction
 ### Todo SpringBoot Application
-Using SpringBoot, Restful API, MySql Database
+Using SpringBoot, Restful API, MySql Database  
 Path: /restful-web-services
 ![Screenshot 2023-11-12 at 10 47 48 PM](https://github.com/XiaoyangJin/Java_FullStack_SpringBoot3_SpringFramework6/assets/90944062/85b9b8d4-7cea-48e5-8e1e-1a6793615a61)
 
