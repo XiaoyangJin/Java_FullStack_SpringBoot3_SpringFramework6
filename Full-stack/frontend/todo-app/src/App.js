@@ -1,12 +1,13 @@
 import './App.css';
-import Counter from './components/counter/Counter';
+// import Counter from './components/counter/Counter';
+import TodoApp from './components/todo/TodoApp';
 
 // All components we wrote shoud be child components of App component
 function App() {
   return (
     <div className="App">
-      <Counter />
-
+      {/* <Counter /> */}
+      <TodoApp />
     </div>
   );
 }
