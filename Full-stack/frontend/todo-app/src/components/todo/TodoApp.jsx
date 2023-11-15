@@ -37,7 +37,7 @@ function LoginComponent() {
             console.log('Success')
             setShowSuccessMessage(true)
             setShowErrorMessage(false)
-            navigate('/welcome/Summer')
+            navigate(`/welcome/${username}`)
         } else {
             console.log('Failed')
             setShowSuccessMessage(false)
