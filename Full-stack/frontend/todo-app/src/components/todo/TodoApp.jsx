@@ -37,10 +37,26 @@ function LoginComponent() {
         }
     }
 
+    function SuccessMessageComponent() {
+        if (showSuccessMessage) {
+            return <div className="successMessage" >Authenticated Successfully</div>
+        } else {
+            return null
+        }
+    }
+
+    function ErrorMessageComponent() {
+        if (showErrorMessage) {
+            return <div className="errorMessage">Authenticated Failed. Please check your credentials.</div>
+        } else {
+            return null
+        }
+    }
+
     return (
         <div className="Login">
-            <div className="successMessage">Authenticated Successfully</div>
-            <div className="errorMessage">Authenticated Failed. Please check your credentials.</div>
+            <SuccessMessageComponent />
+            <ErrorMessageComponent />
             <div className="LoginForm">
                 <div>
                     <label>User Name</label>
@@ -59,6 +75,7 @@ function LoginComponent() {
         </div>
     )
 }
+
 
 function WelcomeComponent() {
     return (
