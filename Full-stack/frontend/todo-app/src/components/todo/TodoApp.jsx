@@ -26,6 +26,8 @@ function LoginComponent() {
 
     return (
         <div className="Login">
+            <div className="successMessage">Authenticated Successfully</div>
+            <div className="errorMessage">Authenticated Failed. Please check your credentials.</div>
             <div className="LoginForm">
                 <div>
                     <label>User Name</label>
