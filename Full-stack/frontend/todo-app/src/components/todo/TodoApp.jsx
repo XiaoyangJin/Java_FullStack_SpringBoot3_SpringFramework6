@@ -24,8 +24,11 @@ function LoginComponent() {
     }
 
     function handleSubmit() {
-        console.log(username)
-        console.log(password)
+        if (username === 'Summer' && password === '12345') {
+            console.log('Success')
+        } else {
+            console.log('Failed')
+        }
     }
 
     return (
