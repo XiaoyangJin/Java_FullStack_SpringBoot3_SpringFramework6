@@ -1,11 +1,15 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './TodoApp.css'
 export default function TodoApp() {
     return (
         <div className="TodoApp">
-            {/* Todo Management Application */}
-            <LoginComponent />
-            {/* <WelcomeComponent /> */}
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/login' element={<LoginComponent />}></Route>
+                    <Route path='/welcome' element={<WelcomeComponent />}></Route>
+                </Routes>
+            </BrowserRouter>
         </div>
     )
 }
