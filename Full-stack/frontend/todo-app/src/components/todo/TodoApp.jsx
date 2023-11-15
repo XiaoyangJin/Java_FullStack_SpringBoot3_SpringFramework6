@@ -1,7 +1,8 @@
+import './TodoApp.css'
 export default function TodoApp() {
     return (
         <div className="TodoApp">
-            Todo Management Application
+            {/* Todo Management Application */}
             <LoginComponent />
             {/* <WelcomeComponent /> */}
         </div>
