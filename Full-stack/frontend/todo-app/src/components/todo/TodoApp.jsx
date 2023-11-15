@@ -14,6 +14,8 @@ function LoginComponent() {
 
     const [username, setUsername] = useState('Summer')
     const [password, setPassword] = useState('')
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+    const [showErrorMessage, setShowErrorMessage] = useState(false)
 
     function handleUsernameChange(event) {
         setUsername(event.target.value)
@@ -26,8 +28,12 @@ function LoginComponent() {
     function handleSubmit() {
         if (username === 'Summer' && password === '12345') {
             console.log('Success')
+            setShowSuccessMessage(true)
+            setShowErrorMessage(false)
         } else {
             console.log('Failed')
+            setShowSuccessMessage(false)
+            setShowErrorMessage(true)
         }
     }
 
