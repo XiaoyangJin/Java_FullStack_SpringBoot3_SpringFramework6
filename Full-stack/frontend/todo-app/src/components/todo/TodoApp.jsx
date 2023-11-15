@@ -47,6 +47,7 @@ function LoginComponent() {
 
     return (
         <div className="Login">
+            <h1>Time to Login</h1>
             {showSuccessMessage && <div className="successMessage" >Authenticated Successfully</div>}
             {showErrorMessage && <div className="errorMessage">Authenticated Failed. Please check your credentials.</div>}
             <div className="LoginForm">
@@ -71,8 +72,11 @@ function LoginComponent() {
 
 function WelcomeComponent() {
     return (
-        <div className="Welcome">
-            Welcome Component
+        <div className="WelcomeComponent">
+            <h1>Welcome to my website!</h1>
+            <div>
+                Welcome Component
+            </div>
         </div>
     )
 }
