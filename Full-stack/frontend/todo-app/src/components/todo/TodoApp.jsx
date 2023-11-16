@@ -101,7 +101,12 @@ function ErrorComponent() {
 
 function ListTodosComponent() {
 
-    const todos = { id: 1, description: 'Learn AWS' }
+    const todos = [
+        { id: 1, description: 'Learn AWS' },
+        { id: 2, description: 'Learn Full Stack Dev' },
+        { id: 3, description: 'Learn DevOps' },
+        { id: 4, description: 'Learn CSS' }
+    ]
 
     return (
         <div className="ListTodosComponent">
@@ -115,8 +120,17 @@ function ListTodosComponent() {
                         </tr>
                     </thead>
                     <tbody>
-                        <td>{todos.id}</td>
-                        <td>{todos.description}</td>
+                        {
+                            todos.map(
+                                todo => (
+                                    <tr key={todo.id}>
+                                        <td>{todo.id}</td>
+                                        <td>{todo.description}</td>
+                                    </tr>
+                                )
+                            )
+                        }
+
                     </tbody>
                 </table>
             </div>
