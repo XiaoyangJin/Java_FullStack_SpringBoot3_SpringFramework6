@@ -4,8 +4,9 @@ import './TodoApp.css'
 export default function TodoApp() {
     return (
         <div className="TodoApp">
-            <HeaderComponent />
+
             <BrowserRouter>
+                <HeaderComponent />
                 <Routes>
                     <Route path='/' element={<LoginComponent />} />
                     <Route path='/login' element={<LoginComponent />} />
@@ -15,8 +16,9 @@ export default function TodoApp() {
 
                     <Route path='*' element={<ErrorComponent />} />
                 </Routes>
+                <FooterComponent />
             </BrowserRouter>
-            <FooterComponent />
+
         </div>
     )
 }
@@ -38,7 +40,7 @@ function LoginComponent() {
     }
 
     function handleSubmit() {
-        if (username === 'Summer' && password === '12345') {
+        if (username === 'XY' && password === '12345') {
             console.log('Success')
             setShowSuccessMessage(true)
             setShowErrorMessage(false)
@@ -115,10 +117,10 @@ function ListTodosComponent() {
     ]
 
     return (
-        <div className="ListTodosComponent">
+        <div className="container">
             <h1>Things You Want To Do!</h1>
             <div>
-                <table>
+                <table className='table'>
                     <thead>
                         <tr>
                             <td>Id</td>
@@ -150,21 +152,29 @@ function ListTodosComponent() {
 
 function HeaderComponent() {
     return (
-        <div className="header">
-            <div>
-                Header <hr />
+        <header className="header">
+            <div className='container'>
+                <ul className='navbar-nav'>
+                    <li className='nav-item'><a className='nav-link' href='http://www.in28minutes.com'>SummerStudy</a></li>
+                    <li className='nav-item'><Link className='nav-link' to='/welcome/xy'>Home</Link></li>
+                    <li className='nav-item'><Link className='nav-link' to='/todos'>Todos</Link></li>
+                    <li className='nav-item'><Link className='nav-link' to='/logout'>Logout</Link></li>
+                    <li className='nav-item'><Link className='nav-link' to='/login'>Login</Link></li>
+                </ul>
+
+
             </div>
-        </div>
+        </header>
     )
 }
 
 function FooterComponent() {
     return (
-        <div className="footer">
-            <div>
-                <hr /> Footer
+        <footer className="footer">
+            <div className='container'>
+                Your Footer
             </div>
-        </div>
+        </footer>
     )
 }
 
