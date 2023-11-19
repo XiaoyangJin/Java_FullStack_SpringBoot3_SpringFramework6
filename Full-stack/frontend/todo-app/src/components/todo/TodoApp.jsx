@@ -7,9 +7,13 @@ import ErrorComponent from './ErrorComponent'
 import WelcomeComponent from './WelcomeComponent'
 import LoginComponent from './LoginComponent'
 import AuthProvider from './security/AuthContext'
+import { useAuth } from './security/AuthContext'
 
 function AuthenticatedRoute({ children }) {
-    return children
+    const authContext = useAuth()
+    if (authContext.isAuthenticated) {
+        return children
+    }
 }
 
 export default function TodoApp() {
