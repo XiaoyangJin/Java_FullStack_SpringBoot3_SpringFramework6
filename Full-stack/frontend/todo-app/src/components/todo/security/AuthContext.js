@@ -27,9 +27,13 @@ export default function AuthProvider({ children }) {
         }
     }
 
+    function logout() {
+        setAuthenticated(false)
+    }
+
 
     return (
-        <AuthContext.Provider value={{ number, isAuthenticated, setAuthenticated, login }}>
+        <AuthContext.Provider value={{ number, isAuthenticated, setAuthenticated, login, logout }}>
             {children}
         </AuthContext.Provider>
     )
