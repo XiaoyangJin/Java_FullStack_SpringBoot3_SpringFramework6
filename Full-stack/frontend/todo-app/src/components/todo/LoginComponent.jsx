@@ -21,16 +21,9 @@ export default function LoginComponent() {
     }
 
     function handleSubmit() {
-        if (username === 'XY' && password === '12345') {
-            authContext.setAuthenticated(true)
-            console.log('Success')
-            setShowSuccessMessage(true)
-            setShowErrorMessage(false)
+        if (authContext.login(username, password)) {
             navigate(`/welcome/${username}`)
         } else {
-            authContext.setAuthenticated(false)
-            console.log('Failed')
-            setShowSuccessMessage(false)
             setShowErrorMessage(true)
         }
     }
@@ -38,7 +31,6 @@ export default function LoginComponent() {
     return (
         <div className="Login">
             <h1>Time to Login</h1>
-            {showSuccessMessage && <div className="successMessage" >Authenticated Successfully</div>}
             {showErrorMessage && <div className="errorMessage">Authenticated Failed. Please check your credentials.</div>}
             <div className="LoginForm">
                 <div>
