@@ -17,10 +17,10 @@ export default function AuthProvider({ children }) {
 
     // setInterval(() => setNumber(number + 1), 10000)
 
-    const valueToBeShared = { number, isAuthenticated, setAuthenticated }
+
 
     return (
-        <AuthContext.Provider value={valueToBeShared}>
+        <AuthContext.Provider value={{ number, isAuthenticated, setAuthenticated }}>
             {children}
         </AuthContext.Provider>
     )
