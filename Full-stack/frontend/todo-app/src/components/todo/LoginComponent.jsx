@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 export default function LoginComponent() {
 
-    const [username, setUsername] = useState('Summer')
+    const [username, setUsername] = useState('XY')
     const [password, setPassword] = useState('')
     const [showSuccessMessage, setShowSuccessMessage] = useState(false)
     const [showErrorMessage, setShowErrorMessage] = useState(false)
