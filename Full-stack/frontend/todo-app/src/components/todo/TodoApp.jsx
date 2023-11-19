@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route, useNavigate, useParams, Link } from 'react-router-dom'
 import './TodoApp.css'
 import LogoutComponent from './LogoutComponent'
+import FooterComponent from './FooterComponent'
+
 export default function TodoApp() {
     return (
         <div className="TodoApp">
@@ -173,15 +175,5 @@ function HeaderComponent() {
             </div>
         </header>
 
-    )
-}
-
-function FooterComponent() {
-    return (
-        <footer className="footer">
-            <div className='container'>
-                Your Footer
-            </div>
-        </footer>
     )
 }
