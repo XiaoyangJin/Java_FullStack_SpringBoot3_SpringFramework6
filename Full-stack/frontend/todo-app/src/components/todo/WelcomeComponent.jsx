@@ -24,7 +24,7 @@ export default function WelcomeComponent() {
 
     function successfulResponse(response) {
         console.log(response)
-        //setMessage(response.data)
+        setMessage(response.data.message)
     }
 
     function errorResponse(error) {
