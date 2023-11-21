@@ -5,7 +5,7 @@ export default function WelcomeComponent() {
     const { username } = useParams()
 
     function callHelloWorldApi() {
-
+        console.log('called')
     }
 
     return (
@@ -15,7 +15,7 @@ export default function WelcomeComponent() {
                 Manage your todos - <Link to="/todos">Go here</Link>
             </div>
             <div>
-                <button class="btn btn-success" onClick={callHelloWorldApi}>Call Hello World REST API</button>
+                <button className="btn btn-success m-5" onClick={callHelloWorldApi}>Call Hello World</button>
             </div>
         </div>
     )
