@@ -11,7 +11,12 @@ export default function WelcomeComponent() {
     function callHelloWorldApi() {
         console.log('called')
         //axios
-        axios.get('http://localhost:8080/hello-world')
+        // axios.get('http://localhost:8080/hello-world')
+        //     .then((response) => successfulResponse(response))
+        //     .catch((error) => errorResponse(error))
+        //     .finally(() => console.log('cleanup'))
+
+        axios.get('http://localhost:8080/hello-world-bean')
             .then((response) => successfulResponse(response))
             .catch((error) => errorResponse(error))
             .finally(() => console.log('cleanup'))
@@ -19,7 +24,7 @@ export default function WelcomeComponent() {
 
     function successfulResponse(response) {
         console.log(response)
-        setMessage(response.data)
+        //setMessage(response.data)
     }
 
     function errorResponse(error) {
