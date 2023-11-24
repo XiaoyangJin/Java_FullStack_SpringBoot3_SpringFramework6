@@ -4,10 +4,10 @@ export default function ListTodosComponent() {
     const targetDate = new Date(today.getFullYear() + 12, today.getMonth(), today.getDay())
 
     const todos = [
-        { id: 1, description: 'Learn AWS', done: false, targetDate: targetDate },
-        { id: 2, description: 'Learn Full Stack Dev', done: false, targetDate: targetDate },
-        { id: 3, description: 'Learn DevOps', done: false, targetDate: targetDate },
-        { id: 4, description: 'Learn CSS', done: false, targetDate: targetDate }
+        // { id: 1, description: 'Learn AWS', done: false, targetDate: targetDate },
+        // { id: 2, description: 'Learn Full Stack Dev', done: false, targetDate: targetDate },
+        // { id: 3, description: 'Learn DevOps', done: false, targetDate: targetDate },
+        // { id: 4, description: 'Learn CSS', done: false, targetDate: targetDate }
     ]
 
     return (
