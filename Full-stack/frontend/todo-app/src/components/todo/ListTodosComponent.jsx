@@ -21,8 +21,13 @@ export default function ListTodosComponent() {
 
     function refreshTodos() {
         retrieveAllTodosForUsername('xy')
-            .then(response => console.log(response))
+            .then(response => {
+                console.log(response.data)
+                setTodos(response.data)
+            })
+
             .catch(error => console.log(error))
+
     }
 
     return (
@@ -46,7 +51,8 @@ export default function ListTodosComponent() {
                                         <td>{todo.id}</td>
                                         <td>{todo.description}</td>
                                         <td>{todo.done.toString()}</td>
-                                        <td>{todo.targetDate.toDateString()}</td>
+                                        {/* <td>{todo.targetDate.toDateString()}</td> */}
+                                        <td>{todo.targetDate.toString()}</td>
                                     </tr>
                                 )
                             )
