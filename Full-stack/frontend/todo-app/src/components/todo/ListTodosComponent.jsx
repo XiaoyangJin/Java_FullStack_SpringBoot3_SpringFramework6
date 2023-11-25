@@ -20,6 +20,10 @@ export default function ListTodosComponent() {
 
     }
 
+    function deleteTodo(id) {
+        console.log('clicked' + id)
+    }
+
     return (
         <div className="container">
             <h1>Things You Want To Do!</h1>
@@ -27,10 +31,10 @@ export default function ListTodosComponent() {
                 <table className='table'>
                     <thead>
                         <tr>
-                            <td>Id</td>
-                            <td>Description</td>
-                            <td>Is Done?</td>
-                            <td>Target Date</td>
+                            <th>Description</th>
+                            <th>Is Done?</th>
+                            <th>Target Date</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,11 +42,12 @@ export default function ListTodosComponent() {
                             todos.map(
                                 todo => (
                                     <tr key={todo.id}>
-                                        <td>{todo.id}</td>
                                         <td>{todo.description}</td>
                                         <td>{todo.done.toString()}</td>
                                         {/* <td>{todo.targetDate.toDateString()}</td> */}
                                         <td>{todo.targetDate.toString()}</td>
+                                        <td><button className="btn btn-warning"
+                                            onClick={() => deleteTodo(todo.id)}>Delete</button></td>
                                     </tr>
                                 )
                             )
