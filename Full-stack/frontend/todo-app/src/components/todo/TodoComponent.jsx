@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { retrieveTodoApi } from './api/TodoApiService'
 import { useAuth } from './security/AuthContext'
-import { Formik, Form, Field } from 'formik'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 export default function TodoComponent() {
 
@@ -35,16 +35,37 @@ export default function TodoComponent() {
         console.log(values)
     }
 
+    function validate(values) {
+        let errors = {
+            description: 'Enter a valid description',
+            targetDate: 'Enter a valid targetDate'
+        }
+        console.log(values)
+        return errors
+    }
+
     return (
         <div className="container">
             <h1>Enter Todo Details</h1>
             <div>
                 <Formik initialValues={{ description, targetDate }}
                     enableReinitialize={true}
-                    onSubmit={onSubmit}>
+                    onSubmit={onSubmit}
+                    validate={validate}
+                >
                     {
                         (props) => (
                             <Form>
+                                <ErrorMessage
+                                    name='description'
+                                    component="div"
+                                    className="alert alert-warning"
+                                />
+                                <ErrorMessage
+                                    name='targetDate'
+                                    component="div"
+                                    className="alert alert-warning"
+                                />
                                 <fieldset className='form-group'>
                                     <label>Description</label>
                                     <Field type="text" className="form-control" name="description" />
