@@ -48,6 +48,9 @@ export default function TodoComponent() {
                                     <label>Terget Date</label>
                                     <Field type="date" className="form-control" name="targetDate" />
                                 </fieldset>
+                                <div>
+                                    <button className='btn btn-success m-5' type='submit'>Save</button>
+                                </div>
                             </Form>
                         )
                     }
