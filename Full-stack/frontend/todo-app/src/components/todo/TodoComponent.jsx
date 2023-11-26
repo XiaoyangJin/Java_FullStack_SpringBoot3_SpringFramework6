@@ -44,6 +44,10 @@ export default function TodoComponent() {
         if (values.description.length < 5) {
             errors.description = 'Enter at least 5 characters'
         }
+
+        if (values.targetDate == null) {
+            errors.targetDate = 'Enter a target date'
+        }
         console.log(values)
         return errors
     }
