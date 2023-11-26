@@ -56,6 +56,8 @@ export default function TodoComponent() {
                     enableReinitialize={true}
                     onSubmit={onSubmit}
                     validate={validate}
+                    validateOnChange={false}
+                    validateOnBlur={false}
                 >
                     {
                         (props) => (
