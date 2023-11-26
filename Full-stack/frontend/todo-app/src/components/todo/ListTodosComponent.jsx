@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { retrieveAllTodosForUsername } from "./api/TodoApiService"
+import { retrieveAllTodosForUsernameApi, deleteTodoApi } from "./api/TodoApiService"
 
 export default function ListTodosComponent() {
 
@@ -7,11 +7,12 @@ export default function ListTodosComponent() {
     const targetDate = new Date(today.getFullYear() + 12, today.getMonth(), today.getDay())
 
     const [todos, setTodos] = useState([])
+    const [message, setMessage] = useState(null)
 
     useEffect(() => refreshTodos(), [])
 
     function refreshTodos() {
-        retrieveAllTodosForUsername('xy')
+        retrieveAllTodosForUsernameApi('xy')
             .then(response => {
                 setTodos(response.data)
             })
@@ -21,12 +22,23 @@ export default function ListTodosComponent() {
     }
 
     function deleteTodo(id) {
-        console.log('clicked' + id)
+        deleteTodoApi('xy', id)
+            .then(
+                () => {
+                    //1: Display message
+                    setMessage(`Delete of todo with ${id} successful`)
+                    //2. Update Todos list
+                    refreshTodos()
+                }
+            )
+            .catch(error => console.log(error))
     }
 
     return (
         <div className="container">
             <h1>Things You Want To Do!</h1>
+            {/* onlu show the alert when message is here */}
+            {message && <div className="alert alert-warning">{message}</div>}
             <div>
                 <table className='table'>
                     <thead>
