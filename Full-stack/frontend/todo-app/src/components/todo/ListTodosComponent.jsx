@@ -26,7 +26,7 @@ export default function ListTodosComponent() {
             .then(
                 () => {
                     //1: Display message
-                    setMessage(`Delete of todo with ${id} successful`)
+                    setMessage(`Delete of todo with id = ${id} successful`)
                     //2. Update Todos list
                     refreshTodos()
                 }
