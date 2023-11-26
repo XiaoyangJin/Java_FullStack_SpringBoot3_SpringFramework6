@@ -37,8 +37,12 @@ export default function TodoComponent() {
 
     function validate(values) {
         let errors = {
-            description: 'Enter a valid description',
-            targetDate: 'Enter a valid targetDate'
+            // description: 'Enter a valid description',
+            // targetDate: 'Enter a valid targetDate'
+
+        }
+        if (values.description.length < 5) {
+            errors.description = 'Enter at least 5 characters'
         }
         console.log(values)
         return errors
