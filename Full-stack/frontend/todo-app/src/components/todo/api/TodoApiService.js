@@ -10,4 +10,7 @@ export const retrieveAllTodosForUsernameApi =
 
 export const deleteTodoApi =
     (username, id) => apiClient.delete(`/users/${username}/todos/${id}`)
+// http://localhost:8080/users/xy/todos/1
+export const retrieveTodoApi =
+    (username, id) => apiClient.get(`/users/${username}/todos/${id}`)
     // http://localhost:8080/users/xy/todos/1

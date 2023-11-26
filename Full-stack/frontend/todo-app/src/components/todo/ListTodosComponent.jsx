@@ -10,7 +10,7 @@ export default function ListTodosComponent() {
     const authContext = useAuth();
     const username = authContext.username;
 
-    // const targetDate = new Date(today.getFullYear() + 12, today.getMonth(), today.getDay())
+    const targetDate = new Date(today.getFullYear() + 12, today.getMonth(), today.getDay())
 
     const [todos, setTodos] = useState([])
     const [message, setMessage] = useState(null)
