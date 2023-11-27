@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { retrieveTodoApi, updateTodoApi } from './api/TodoApiService'
+import { createTodoApi, retrieveTodoApi, updateTodoApi } from './api/TodoApiService'
 import { useAuth } from './security/AuthContext'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
@@ -43,13 +43,21 @@ export default function TodoComponent() {
             done: false
         }
         console.log(todo)
-        updateTodoApi(username, id, todo)
-            .then(response => {
-                console.log(response)
-                navigate('/todos')
-            }
-            )
-            .catch(error => console.log(error))
+
+        if (id == -1) {
+            createTodoApi(username, todo)
+                .then(response => {
+                    navigate('/todos')
+                })
+                .catch(error => console.log(error))
+        } else {
+            updateTodoApi(username, id, todo)
+                .then(response => {
+                    navigate('/todos')
+                })
+                .catch(error => console.log(error))
+        }
+
     }
 
     function validate(values) {
