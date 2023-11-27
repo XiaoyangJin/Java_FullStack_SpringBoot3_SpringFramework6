@@ -21,13 +21,16 @@ export default function TodoComponent() {
 
 
     function retrieveTodos() {
-        retrieveTodoApi(username, id)
+        if (id != -1) {
+            retrieveTodoApi(username, id)
             .then(response => {
                 setDescription(response.data.description)
                 setTargetDate(response.data.targetDate)
             }
             )
             .catch(error => console.log(error))
+        }
+
     }
 
     function onSubmit(values) {
