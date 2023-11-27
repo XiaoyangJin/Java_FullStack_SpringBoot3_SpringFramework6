@@ -84,6 +84,7 @@ export default function ListTodosComponent() {
                     </tbody>
                 </table>
             </div>
+            <div className="btn btn-success m-5">Add New Todo</div>
         </div>
     )
 }
