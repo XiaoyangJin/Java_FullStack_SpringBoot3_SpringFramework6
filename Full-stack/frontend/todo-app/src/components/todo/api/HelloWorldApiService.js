@@ -11,5 +11,10 @@ const apiClient = axios.create({
 export const retrieveHelloWorldBean =
     () => apiClient.get('/hello-world-bean')
 
+//Response to preflight request doesn't pass access control check -> Authorization
 export const retrieveHelloWorldPathVariable =
-    (username) => apiClient.get(`/hello-world/path-variable/${username}`)
+    (username) => apiClient.get(`/hello-world/path-variable/${username}`, {
+        headers: {
+            // Authorization: 'Basic eHk6MTIzNDU='
+        }
+    })
