@@ -12,11 +12,13 @@ export const retrieveHelloWorldBean =
 //Response to preflight request doesn't pass access control check -> Authorization
 //has been blocked by CORS policy -> no Authorization
 export const retrieveHelloWorldPathVariable =
-    (username, token) => apiClient.get(`/hello-world/path-variable/${username}`, {
-        headers: {
-            Authorization: token
-        }
-    })
+    (username, token) => apiClient.get(`/hello-world/path-variable/${username}`
+        // , {
+        //     headers: {
+        //         Authorization: token
+        //     }
+        // }
+    )
 
 export const executeBasicAuthenticationService =
     (token) => apiClient.get(`/basicauth`, {
