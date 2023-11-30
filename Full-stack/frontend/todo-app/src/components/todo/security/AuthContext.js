@@ -16,6 +16,8 @@ export default function AuthProvider({ children }) {
 
     const [username, setUsername] = useState(null)
 
+    const [token, setToken] = useState(null)
+
     // function login(username, password) {
     //     if (username === 'XY' && password === '12345') {
     //         setAuthenticated(true)
@@ -39,25 +41,26 @@ export default function AuthProvider({ children }) {
             if (response.status == 200) {
                 setAuthenticated(true)
                 setUsername(username)
+                setToken(basicToken)
                 return true
             } else {
-                setAuthenticated(false)
-                setUsername(null)
+                logout()
                 return false
             }
         } catch (error) {
-            setAuthenticated(false)
-            setUsername(null)
+            logout()
             return false
         }
     }
 
     function logout() {
         setAuthenticated(false)
+        setUsername(null)
+        setToken(null)
     }
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, login, logout, username }}>
+        <AuthContext.Provider value={{ isAuthenticated, login, logout, username, token }}>
             {children}
         </AuthContext.Provider>
     )
