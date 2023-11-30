@@ -28,35 +28,33 @@ export default function AuthProvider({ children }) {
     //     }
     // }
 
-    function login(username, password) {
+    async function login(username, password) {
 
         const basicToken = 'Basic ' + window.btoa(username + ":" + password)
 
-        executeBasicAuthenticationService(basicToken)
-            .then(response => console.log(response))
-            .catch(error => console.log(error))
+        try {
+            // this is a promise
+            const response = await executeBasicAuthenticationService(basicToken)
 
-        setAuthenticated(false)
-
-        // if (username === 'XY' && password === '12345') {
-        //     setAuthenticated(true)
-        //     setUsername(username)
-        //     return true
-        // } else {
-        //     setAuthenticated(false)
-        //     setUsername(null)
-        //     return false
-        // }
+            if (response.status == 200) {
+                setAuthenticated(true)
+                setUsername(username)
+                return true
+            } else {
+                setAuthenticated(false)
+                setUsername(null)
+                return false
+            }
+        } catch (error) {
+            setAuthenticated(false)
+            setUsername(null)
+            return false
+        }
     }
 
     function logout() {
         setAuthenticated(false)
     }
-
-    function logout() {
-        setAuthenticated(false)
-    }
-
 
     return (
         <AuthContext.Provider value={{ isAuthenticated, login, logout, username }}>
