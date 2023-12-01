@@ -15,6 +15,8 @@ public class RestfulWebServicesApplication {
 
 	//Cross Origin Requests
 	//Allow all requests only from http://localhost:3000/
+	
+	
 	@Bean
 	public WebMvcConfigurer crosConfigurer() {
 		return new WebMvcConfigurer() {

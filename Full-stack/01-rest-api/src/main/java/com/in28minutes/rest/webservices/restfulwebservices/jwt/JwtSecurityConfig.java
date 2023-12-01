@@ -47,11 +47,12 @@ public class JwtSecurityConfig {
         
         // h2-console is a servlet 
         // https://github.com/spring-projects/spring-security/issues/12310
-        return httpSecurity
+    	return httpSecurity
                 .authorizeHttpRequests(auth -> auth
                     .requestMatchers("/authenticate").permitAll()
                     .requestMatchers(PathRequest.toH2Console()).permitAll() // h2-console is a servlet and NOT recommended for a production
-                    .requestMatchers(HttpMethod.OPTIONS,"/**").permitAll()
+                    .requestMatchers(HttpMethod.OPTIONS,"/**")
+                    .permitAll()
                     .anyRequest()
                     .authenticated())
                 .csrf(AbstractHttpConfigurer::disable)
@@ -76,8 +77,8 @@ public class JwtSecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        UserDetails user = User.withUsername("in28minutes")
-                                .password("{noop}dummy")
+        UserDetails user = User.withUsername("xy")
+                                .password("{noop}12345")
                                 .authorities("read")
                                 .roles("USER")
                                 .build();
