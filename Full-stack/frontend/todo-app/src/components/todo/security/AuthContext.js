@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { apiClient } from "../api/ApiClient";
 import { executeBasicAuthenticationService } from "../api/AuthenticationApiService";
+import { executeJwtAuthenticationService } from "../api/AuthenticationApiService";
 
 //1: Create a Context
 export const AuthContext = createContext()
@@ -31,22 +32,53 @@ export default function AuthProvider({ children }) {
     //     }
     // }
 
-    async function login(username, password) {
+    // async function login(username, password) {
 
-        const basicToken = 'Basic ' + window.btoa(username + ":" + password)
+    //     const basicToken = 'Basic ' + window.btoa(username + ":" + password)
+
+    //     try {
+    //         // this is a promise
+    //         const response = await executeBasicAuthenticationService(basicToken)
+
+    //         if (response.status == 200) {
+    //             setAuthenticated(true)
+    //             setUsername(username)
+    //             setToken(basicToken)
+    //             apiClient.interceptors.request.use(
+    //                 (config) => {
+    //                     console.log('intercepting and adding a token')
+    //                     config.headers.Authorization = basicToken
+    //                     return config
+    //                 }
+    //             )
+    //             return true
+    //         } else {
+    //             logout()
+    //             return false
+    //         }
+    //     } catch (error) {
+    //         logout()
+    //         return false
+    //     }
+    // }
+
+    async function login(username, password) {
 
         try {
             // this is a promise
-            const response = await executeBasicAuthenticationService(basicToken)
+            const response = await executeJwtAuthenticationService(username, password)
 
             if (response.status == 200) {
+
+                const jwtToken = 'Bearer ' + response.data.token
+
                 setAuthenticated(true)
                 setUsername(username)
-                setToken(basicToken)
+                setToken(jwtToken)
                 apiClient.interceptors.request.use(
                     (config) => {
                         console.log('intercepting and adding a token')
-                        config.headers.Authorization = basicToken
+                        config.headers.Authorization = jwtToken
                         return config
                     }
                 )
