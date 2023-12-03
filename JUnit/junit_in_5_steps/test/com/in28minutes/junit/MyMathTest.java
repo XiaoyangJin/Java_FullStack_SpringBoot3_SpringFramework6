@@ -9,20 +9,17 @@ class MyMathTest {
 	private MyMath math = new MyMath();;
 
 	@Test
-	void test() {
+	void calculateSum_ThreeMemberArray() {
 		
-		int res = math.calculateSum(new int[] {1, 2, 3});
-		int expectedRes = 6;
-		assertEquals(res, expectedRes);
+		assertEquals(6, math.calculateSum(new int[] {1, 2, 3}));
 		
 	}
 	
 	@Test
-	void test1() {
+	void calculateSum_ZeroLengthrArray() {
 		
-		int res = math.calculateSum(new int[] {});
-		int expectedRes = 0;
-		assertEquals(res, expectedRes);
+		assertEquals(0, math.calculateSum(new int[] {}));
+		
 	}
 
 }
