@@ -21,7 +21,7 @@ class MyAssertTest {
 		
 		assertFalse(test2);
 		
-		assertArrayEquals(new int[] {1, 2}, new int[] {1, 2});
+		assertArrayEquals(new int[] {1, 2}, new int[] {2, 1});
 		
 		assertEquals(3, todos.size(), "Something went wrong");
 		
