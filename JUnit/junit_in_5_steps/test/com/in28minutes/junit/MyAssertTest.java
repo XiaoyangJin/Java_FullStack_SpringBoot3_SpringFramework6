@@ -16,7 +16,7 @@ class MyAssertTest {
 		
 		boolean test = todos.contains("AWS");
 		
-		assertEquals(true, test);
+		assertTrue(test);
 		
 		assertEquals(3, todos.size());
 		
