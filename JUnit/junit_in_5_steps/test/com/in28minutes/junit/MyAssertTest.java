@@ -18,6 +18,8 @@ class MyAssertTest {
 		
 		assertEquals(true, test);
 		
+		assertEquals(3, todos.size());
+		
 	}
 
 }
