@@ -18,8 +18,9 @@ class MyAssertTest {
 		boolean test2 = todos.contains("Angular");
 		
 		assertTrue(test);
-		
 		assertFalse(test2);
+		
+		//assertNull, assertNotNull
 		
 		assertArrayEquals(new int[] {1, 2}, new int[] {2, 1});
 		
