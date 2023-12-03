@@ -12,6 +12,8 @@ class MyMathTest {
 		MyMath math = new MyMath();
 		int res = math.calculateSum(numbers);
 		System.out.println(res);
+		int expectedRes = 6;
+		assertEquals(res, expectedRes);
 	}
 
 }
