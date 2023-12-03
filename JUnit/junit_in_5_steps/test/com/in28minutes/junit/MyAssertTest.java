@@ -15,10 +15,13 @@ class MyAssertTest {
 	void test() {
 		
 		boolean test = todos.contains("AWS");
+		boolean test2 = todos.contains("Angular");
 		
 		assertTrue(test);
 		
-		assertEquals(2, todos.size(), "Something went wrong");
+		assertFalse(test2);
+		
+		assertEquals(3, todos.size(), "Something went wrong");
 		
 	}
 
