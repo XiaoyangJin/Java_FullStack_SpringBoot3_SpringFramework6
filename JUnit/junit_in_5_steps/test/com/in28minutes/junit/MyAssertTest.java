@@ -18,7 +18,7 @@ class MyAssertTest {
 		
 		assertTrue(test);
 		
-		assertEquals(3, todos.size());
+		assertEquals(2, todos.size(), "Something went wrong");
 		
 	}
 
