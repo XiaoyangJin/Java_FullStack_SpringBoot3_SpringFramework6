@@ -8,7 +8,10 @@ class MyMathTest {
 
 	@Test
 	void test() {
-		
+		int[] numbers = {1, 2, 3};
+		MyMath math = new MyMath();
+		int res = math.calculateSum(numbers);
+		System.out.println(res);
 	}
 
 }
