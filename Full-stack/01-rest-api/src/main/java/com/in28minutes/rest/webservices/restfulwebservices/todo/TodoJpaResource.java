@@ -11,13 +11,18 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.in28minutes.rest.webservices.restfulwebservices.todo.repository.TodoRepository;
+
 @RestController
 public class TodoJpaResource {
 	
 	private TodoService todoService;
 	
-	public TodoJpaResource(TodoService todoService) {
+	private TodoRepository todoRepository;
+	
+	public TodoJpaResource(TodoService todoService, TodoRepository todoRepository) {
 		this.todoService = todoService;
+		this.todoRepository = todoRepository;
 	}
 	
 	@GetMapping("/users/{username}/todos")
