@@ -7,6 +7,7 @@ import static org.mockito.Mockito.when;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 public class ListTest {
 	
@@ -46,6 +47,18 @@ public class ListTest {
 		
 		assertEquals("SomeString", listMock.get(0));
 		assertEquals(null, listMock.get(1));
+		
+	}
+	
+	@Test
+	void generateParametersTest() {
+		
+		List listMock = mock(List.class);
+		
+		when(listMock.get(Mockito.anyInt())).thenReturn("SomeOtherString");
+		
+		assertEquals("SomeOtherString", listMock.get(0));
+		assertEquals("SomeOtherString", listMock.get(1));
 		
 	}
 
