@@ -7,12 +7,13 @@ import org.junit.jupiter.api.Test;
 class SomeBusimessImplTest {
 
 	@Test
-	void test() {
+	void findTheGreatestFromAllData_basicScenario() {
 		
 		DataServiceStub dataServiceStub = new DataServiceStub();
 		
 		SomeBusinessImpl businessImpl = new SomeBusinessImpl(dataServiceStub);
-		businessImpl.findTheGreatestFromAllData();
+		int result = businessImpl.findTheGreatestFromAllData();
+		assertEquals(25, result);
 	}
 
 }
