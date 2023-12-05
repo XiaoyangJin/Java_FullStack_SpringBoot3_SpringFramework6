@@ -9,7 +9,7 @@ class SomeBusimessImplTest {
 	@Test
 	void findTheGreatestFromAllData_basicScenario() {
 		
-		DataServiceStub dataServiceStub = new DataServiceStub();
+		DataService dataServiceStub = new DataServiceStub1();
 		
 		SomeBusinessImpl businessImpl = new SomeBusinessImpl(dataServiceStub);
 		int result = businessImpl.findTheGreatestFromAllData();
@@ -18,11 +18,20 @@ class SomeBusimessImplTest {
 
 }
 
-class DataServiceStub implements DataService{
+class DataServiceStub1 implements DataService{
 
 	@Override
 	public int[] retrieveAllData() {
 		return new int[]{25, 23, 14};
+	}
+	
+}
+
+class DataServiceStub2 implements DataService{
+
+	@Override
+	public int[] retrieveAllData() {
+		return new int[]{14};
 	}
 	
 }
