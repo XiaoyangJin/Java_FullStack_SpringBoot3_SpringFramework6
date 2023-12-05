@@ -12,12 +12,20 @@ class SomeBusimessImplMockTest {
 	void findTheGreatestFromAllData_basicScenario() {
 		
 		DataService dataServiceMock = mock(DataService.class);
-//		dataServiceMock.retrieveAllData() => new int[] {24, 25, 14};
 		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {24, 25, 14});
 		
 		SomeBusinessImpl businessImpl = new SomeBusinessImpl(dataServiceMock);
-		int result = businessImpl.findTheGreatestFromAllData();
-		assertEquals(25, result);
+		assertEquals(25, businessImpl.findTheGreatestFromAllData());
+	}
+	
+	@Test
+	void findTheGreatestFromAllData_oneScenario() {
+		
+		DataService dataServiceMock = mock(DataService.class);
+		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {1});
+		
+		SomeBusinessImpl businessImpl = new SomeBusinessImpl(dataServiceMock);
+		assertEquals(1, businessImpl.findTheGreatestFromAllData());
 	}
 
 }
