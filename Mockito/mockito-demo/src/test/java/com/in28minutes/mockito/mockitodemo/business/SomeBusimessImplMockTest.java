@@ -21,18 +21,21 @@ class SomeBusimessImplMockTest {
 
 	@Test
 	void findTheGreatestFromAllData_basicScenario() {
-		
 		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {24, 25, 14});
-		
 		assertEquals(25, businessImpl.findTheGreatestFromAllData());
 	}
 	
 	@Test
 	void findTheGreatestFromAllData_oneScenario() {
-		
 		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {1});
-		
 		assertEquals(1, businessImpl.findTheGreatestFromAllData());
 	}
+	
+	@Test
+	void findTheGreatestFromAllData_nullScenario() {
+		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {});
+		assertEquals(0, businessImpl.findTheGreatestFromAllData());
+	}
+
 
 }

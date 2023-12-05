@@ -13,6 +13,9 @@ public class SomeBusinessImpl {
 
 	public int findTheGreatestFromAllData() {
 		int[] data = dataService.retrieveAllData();
+		if(data.length == 0 || data == null) {
+			return 0;
+		}
 		int greatestValue = Integer.MIN_VALUE;
 		for(int value : data) {
 			if(value > greatestValue) {
