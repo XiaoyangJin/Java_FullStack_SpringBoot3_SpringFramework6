@@ -15,10 +15,13 @@ public class BasicAuthSecurityConfiguration {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests((auth) -> auth.anyRequest().authenticated());
 		http.sessionManagement(
-				session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+				session -> session.sessionCreationPolicy(
+						SessionCreationPolicy.STATELESS)
 				);
 //		http.formLogin(withDefaults());
 		http.httpBasic(withDefaults());
+		
+		http.csrf().disable();
 		return http.build();
 	}
 	
