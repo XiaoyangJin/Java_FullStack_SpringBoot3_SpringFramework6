@@ -21,10 +21,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
+import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.KeySourceException;
 import com.nimbusds.jose.jwk.JWKSelector;
 import com.nimbusds.jose.jwk.JWKSet;
@@ -120,8 +122,8 @@ public class JwtSecurityConfiguration {
 		return (jwkSelector, context) -> jwkSelector.select(jwkSet);
 	}
 	
-//	@Bean
-//	public JwtDecoder jwtDecoder() {
-//		return decoder
-//	}
+	@Bean
+	public JwtDecoder jwtDecoder(RSAKey rsaKey) throws JOSEException {
+		return NimbusJwtDecoder.withPublicKey(rsaKey.toRSAPublicKey()).build();
+	}
 }
