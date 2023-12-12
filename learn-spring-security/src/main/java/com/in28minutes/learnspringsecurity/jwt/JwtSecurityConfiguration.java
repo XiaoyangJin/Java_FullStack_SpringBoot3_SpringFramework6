@@ -2,6 +2,9 @@ package com.in28minutes.learnspringsecurity.jwt;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
@@ -14,9 +17,11 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 public class JwtSecurityConfiguration {
@@ -34,6 +39,8 @@ public class JwtSecurityConfiguration {
 		http.csrf(csrf -> csrf.disable());
 		
 		http.headers(headers -> headers.frameOptions(frameOptionsConfig-> frameOptionsConfig.disable()));
+		
+		http.oauth2ResourceServer((oauth2) -> oauth2.jwt(withDefaults()));
 		
 		return http.build();
 	}
@@ -74,4 +81,20 @@ public class JwtSecurityConfiguration {
 	public BCryptPasswordEncoder passwodEncoder() {
 		return new BCryptPasswordEncoder();
 	}
+	
+	@Bean
+	public KeyPair keyPair() {
+		try {
+			var keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+			keyPairGenerator.initialize(2048);
+			return keyPairGenerator.generateKeyPair();
+		} catch(Exception ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+	
+//	@Bean
+//	public JwtDecoder jwtDecoder() {
+//		return decoder
+//	}
 }
