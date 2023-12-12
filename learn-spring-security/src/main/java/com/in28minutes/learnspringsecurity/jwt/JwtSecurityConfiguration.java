@@ -1,4 +1,4 @@
-package com.in28minutes.learnspringsecurity.basic;
+package com.in28minutes.learnspringsecurity.jwt;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
