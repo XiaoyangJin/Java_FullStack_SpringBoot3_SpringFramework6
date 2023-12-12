@@ -28,7 +28,7 @@ public class JwtSecurityConfiguration {
 				session -> session.sessionCreationPolicy(
 						SessionCreationPolicy.STATELESS)
 				);
-//		http.formLogin(withDefaults());
+		
 		http.httpBasic(withDefaults());
 		
 		http.csrf().disable();
@@ -36,22 +36,6 @@ public class JwtSecurityConfiguration {
 		http.headers().frameOptions().sameOrigin();
 		return http.build();
 	}
-	
-//	@Bean
-//	public UserDetailsService userDetailsService() {
-//		
-//		var user = User.withUsername("in28minutes")
-//					.password("{noop}dummy")
-//					.roles("USER")
-//					.build();
-//		
-//		var admin = User.withUsername("admin")
-//				.password("{noop}dummy")
-//				.roles("ADMIN")
-//				.build();
-//		
-//		return new InMemoryUserDetailsManager(user, admin);
-//	}
 	
 	@Bean
 	public DataSource dataSource() {
