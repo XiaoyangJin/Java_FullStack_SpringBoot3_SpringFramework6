@@ -4,6 +4,8 @@ import static org.springframework.security.config.Customizer.withDefaults;
 
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
+import java.security.interfaces.RSAPublicKey;
+import java.util.UUID;
 
 import javax.sql.DataSource;
 
@@ -21,6 +23,9 @@ import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+
+import com.nimbusds.jose.jwk.RSAKey;
+
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
@@ -91,6 +96,14 @@ public class JwtSecurityConfiguration {
 		} catch(Exception ex) {
 			throw new RuntimeException(ex);
 		}
+	}
+	
+	@Bean
+	public RSAKey rsaKey(KeyPair keyPair) {
+		return new RSAKey.Builder((RSAPublicKey)keyPair.getPublic())
+					.privateKey(keyPair.getPrivate())
+					.keyID(UUID.randomUUID().toString())
+					.build();
 	}
 	
 //	@Bean
