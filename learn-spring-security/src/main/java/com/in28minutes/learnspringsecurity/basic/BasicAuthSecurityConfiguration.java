@@ -26,6 +26,8 @@ public class BasicAuthSecurityConfiguration {
 		http.httpBasic(withDefaults());
 		
 		http.csrf().disable();
+		
+		http.headers().frameOptions().sameOrigin();
 		return http.build();
 	}
 	
