@@ -70,7 +70,7 @@ public class BasicAuthSecurityConfiguration {
 		
 		var admin = User.withUsername("admin")
 				.password("{noop}dummy")
-				.roles("ADMIN")
+				.roles("ADMIN", "USER")
 				.build();
 		
 		var jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
