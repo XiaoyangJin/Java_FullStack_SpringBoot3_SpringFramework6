@@ -65,12 +65,16 @@ public class BasicAuthSecurityConfiguration {
 	public UserDetailsService userDetailsService(DataSource dataSource) {
 		
 		var user = User.withUsername("in28minutes")
-					.password("{noop}dummy")
+//					.password("{noop}dummy")
+					.password("dummy")
+					.passwordEncoder(str -> passwodEncoder().encode(str))
 					.roles("USER")
 					.build();
 		
 		var admin = User.withUsername("admin")
-				.password("{noop}dummy")
+//				.password("{noop}dummy")
+				.password("dummy")
+				.passwordEncoder(str -> passwodEncoder().encode(str))
 				.roles("ADMIN", "USER")
 				.build();
 		
