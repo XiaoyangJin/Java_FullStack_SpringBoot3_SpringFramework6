@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.annotation.security.RolesAllowed;
+
 @RestController
 public class TodoResource {
 	
@@ -29,6 +31,7 @@ public class TodoResource {
 	@GetMapping("/users/{username}/todos")
 	@PreAuthorize("hasRole('USER') or #username == authentication.name")
 	@PostAuthorize("returnObject.username == 'in28minutes'")
+	@RolesAllowed({"ADMIN", "USER"})
 	public Todo retrieveTodosForSpecificUser(@PathVariable("username") String username) {
 		return TODOS_LIST.get(0);
 	}
