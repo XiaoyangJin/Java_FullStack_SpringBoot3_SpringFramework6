@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +33,7 @@ public class TodoResource {
 	@PreAuthorize("hasRole('USER') or #username == authentication.name")
 	@PostAuthorize("returnObject.username == 'in28minutes'")
 	@RolesAllowed({"ADMIN", "USER"})
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	public Todo retrieveTodosForSpecificUser(@PathVariable("username") String username) {
 		return TODOS_LIST.get(0);
 	}
