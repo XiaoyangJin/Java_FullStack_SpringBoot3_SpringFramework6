@@ -23,7 +23,12 @@ public class BasicAuthSecurityConfiguration {
 	
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http.authorizeHttpRequests((auth) -> auth.anyRequest().authenticated());
+		http.authorizeHttpRequests((auth) -> {
+										auth
+										.requestMatchers("/users").hasRole("USER")
+										.requestMatchers("/admin/**").hasRole("ADMIN")
+										.anyRequest().authenticated();
+										});
 		http.sessionManagement(
 				session -> session.sessionCreationPolicy(
 						SessionCreationPolicy.STATELESS)
