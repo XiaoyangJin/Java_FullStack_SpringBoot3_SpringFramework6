@@ -1,0 +1,25 @@
+package com.in28minutes.learnspringaop.aopexample.aspects;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Configuration;
+
+//Configuration class
+//AOP
+@Configuration
+@Aspect
+public class LoggingAspect {
+	
+	private Logger logger = LoggerFactory.getLogger(getClass());
+	
+	//Pointcur - When?
+	// execution(* com.in28minutes.learnspringaop.aopexample.business.**(..))
+	@Pointcut("execution(* com.in28minutes.learnspringaop.aopexample.business.**(..))")
+	public void logMethosCall() {
+		//Logic - What?
+		logger.info("Method is called - ");
+	}
+
+}
