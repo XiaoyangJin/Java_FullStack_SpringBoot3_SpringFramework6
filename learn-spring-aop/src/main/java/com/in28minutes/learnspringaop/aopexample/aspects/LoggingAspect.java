@@ -18,7 +18,7 @@ public class LoggingAspect {
 	
 	//Pointcur - When?
 	// execution(* com.in28minutes.learnspringaop.aopexample.business.**(..))
-	@Before("execution(* com.in28minutes.learnspringaop.aopexample.business.*.*(..))")
+	@Before("execution(* com.in28minutes.learnspringaop.aopexample.data.*.*(..))")
 	public void logMethosCall(JoinPoint joinPoint) {
 		//Logic - What?
 		logger.info("Before Aspect - Method is called - {}", joinPoint);
