@@ -14,6 +14,10 @@ public class LearnSpringAopApplication implements CommandLineRunner {
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	
 	private BusinessService1 businessService1;
+	
+	public LearnSpringAopApplication(BusinessService1 businessService1) {
+		this.businessService1 = businessService1;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(LearnSpringAopApplication.class, args);
