@@ -1,6 +1,8 @@
 package com.in28minutes.learnspringaop.aopexample.aspects;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,10 +18,11 @@ public class LoggingAspect {
 	
 	//Pointcur - When?
 	// execution(* com.in28minutes.learnspringaop.aopexample.business.**(..))
-	@Pointcut("execution(* com.in28minutes.learnspringaop.aopexample.business.**(..))")
-	public void logMethosCall() {
+	@Before("execution(* com.in28minutes.learnspringaop.aopexample.business.*.*(..))")
+	public void logMethosCall(JoinPoint joinPoint) {
 		//Logic - What?
-		logger.info("Method is called - ");
+		logger.info("Before Aspect - Method is called - {}", joinPoint);
+		//Before Aspect - Method is called - execution(int com.in28minutes.learnspringaop.aopexample.business.BusinessService1.calculateMax())
 	}
 
 }
