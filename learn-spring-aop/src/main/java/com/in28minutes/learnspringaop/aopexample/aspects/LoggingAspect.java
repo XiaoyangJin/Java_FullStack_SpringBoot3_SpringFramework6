@@ -28,7 +28,7 @@ public class LoggingAspect {
 				joinPoint, joinPoint.getArgs());
 	}
 	
-	@After("com.in28minutes.learnspringaop.aopexample.aspects.CommonPointcutConfig.businessAndDataPackageConfig()")
+	@After("com.in28minutes.learnspringaop.aopexample.aspects.CommonPointcutConfig.businessPackageConfig()")
 	public void logMethodCallAfterExecution(JoinPoint joinPoint) {
 		logger.info("After Aspect - Method is called - {} has executed", joinPoint);
 	}
@@ -42,7 +42,7 @@ public class LoggingAspect {
 	}
 	
 	@AfterReturning(
-			pointcut = "com.in28minutes.learnspringaop.aopexample.aspects.CommonPointcutConfig.businessAndDataPackageConfig()",
+			pointcut = "com.in28minutes.learnspringaop.aopexample.aspects.CommonPointcutConfig.dataPackageConfig()",
 			returning = "resultValue")
 	public void logMethodCallAfterSuccessExecution(JoinPoint joinPoint, Object resultValue) {
 		logger.info("AfterReturning Aspect - {} has returned {}"
