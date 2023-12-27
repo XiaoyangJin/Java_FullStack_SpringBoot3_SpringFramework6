@@ -21,7 +21,7 @@ public class LoggingAspect {
 	
 	//Pointcur - When?
 	// execution(* com.in28minutes.learnspringaop.aopexample.business.**(..))
-	@Before("com.in28minutes.learnspringaop.aopexample.aspects.CommonPointcutConfig.businessAndDataPackageConfig()")
+	@Before("com.in28minutes.learnspringaop.aopexample.aspects.CommonPointcutConfig.allPackageConfigUsingBean()")
 	public void logMethodCallBeforeExecution(JoinPoint joinPoint) {
 		//Logic - What?
 		logger.info("Before Aspect - Method is called - {} is called with arguments:{}",

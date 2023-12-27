@@ -14,7 +14,7 @@ public class CommonPointcutConfig {
 	public void dataPackageConfig() { }
 	
 	@Pointcut("bean(*Service*)")
-	public void dataPackageConfigUsingBean() { } 
+	public void allPackageConfigUsingBean() { } 
 	
 
 }
