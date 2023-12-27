@@ -13,5 +13,8 @@ public class CommonPointcutConfig {
 	@Pointcut("execution(* com.in28minutes.learnspringaop.aopexample.data.*.*(..))")
 	public void dataPackageConfig() { }
 	
+	@Pointcut("bean(*Service*)")
+	public void dataPackageConfigUsingBean() { } 
+	
 
 }
